@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { Square } from './components/Square';
 import { TURNS } from './constants';
@@ -15,10 +15,12 @@ function App() {
     }
     return Array(9).fill(null);
   });
+
   const [turn, setTurn] = useState(() => {
     const turnFromStorage = window.localStorage.getItem('turn');
     return turnFromStorage ?? TURNS.X;
   });
+
   const [winner, setWinner] = useState(null); //null es que no hay ganador, false es un empate
 
   const updateBoard = (index) => {
