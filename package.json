@@ -9,7 +9,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.0",
+    "standard": "^17.1.0"
+  },
   "eslintConfig": {
-    "extends": ".node_modules/standard/eslintrc.json"
+    "extends": [
+      "standard",
+      "plugin:react/recommended"
+    ]
   }
 }
