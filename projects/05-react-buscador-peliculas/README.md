@@ -8,13 +8,16 @@ Requerimientos:
 ✔️ Necesita mostrar un input para buscar la película y un botón para buscar.
 
 ✔️ Lista las películas y muestra el título, año y poster.
-    ENDPOINT = http://www.omdbapi.com/?apikey=c0367692&s={title}
 
-❌ Que el formulario funcione
+✔️ Que el formulario funcione
 
-❌ Haz que las películas se muestren en un grid responsive.
+✔️ Hacer el fetching de datos a la API
+    ENDPOINT = http://www.omdbapi.com/?
+    apikey=c0367692&s={title}
+    
+✔️ Haz que las películas se muestren en un grid responsive.
 
-❌ Hacer el fetching de datos a la API
+✔️ Hacer el fetching de datos a la API
 
 Primera iteración:
 

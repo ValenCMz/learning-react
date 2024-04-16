@@ -3,6 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 800px;
 }
 
 .form{
@@ -13,4 +15,26 @@
 main{
     display: flex;
     justify-content: center;
+    width: 100%;
+
 }
+
+.cont_movies{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 2rem;
+}
+
+.movie{
+    text-align: center;
+}
+
+.movie h3, .movie p{
+    margin: 0;
+}
+
+
