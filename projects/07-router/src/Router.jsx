@@ -4,7 +4,7 @@ import { match } from 'path-to-regexp'
 import { getCurrentPath } from './utils/getCurrentPath'
 
 // eslint-disable-next-line react/prop-types
-export function Router ({children, routes = [], DefaultComponent = () => null }) {
+export function Router ({children, routes = [], DefaultComponent = () => <h1>404</h1> }) {
   const [currentPath, setCurrentPath] = useState(getCurrentPath())
 
   useEffect(() => {
@@ -28,7 +28,6 @@ export function Router ({children, routes = [], DefaultComponent = () => null })
     const { name } = type
     console.log({ name, props })
     const isRoute = name === 'Route'
-
     return isRoute ? props : null
   })
 
