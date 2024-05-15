@@ -18,26 +18,35 @@ const initialState: State = {
     // Intercambiar idiomas
     if (type === 'INTERCHANGE_LANGUAGES'){
       if(state.fromLanguage === AUTO_LANGUAGE) return state
+      
+      const loading  = state.fromText === ''
 
       return {      
         ...state,
+        loading: loading,
+        result: '',
         fromLanguage: state.toLanguage,
         toLanguage: state.fromLanguage
       }
     }
   
     if(type === 'SET_FROM_LANGUAGE'){
+      if(state.fromLanguage === action.payload) return state
+      const loading  = state.fromText === ''
 
       return {
         ...state,
-        fromLanguage: action.payload
+        fromLanguage: action.payload,
+        result: '',
+        loading
       }
     }
   
     if(type === 'SET_TO_LANGUAGE'){
       return{
         ...state,
-        toLanguage: action.payload
+        toLanguage: action.payload,
+        result: ''
       }
     }
   
@@ -66,6 +75,7 @@ const initialState: State = {
 export function useStore () {
     const [ {fromLanguage, toLanguage, fromText, result, loading}, dispatch] = useReducer(reducer, initialState)
 
+    //Funciones que envuelve el dispatch, para no tener que importar el dispatch en el componente
     const interchangeLanguages = () => dispatch({ type: 'INTERCHANGE_LANGUAGES' })
     const setFromLanguage = (payload: FromLanguage) => dispatch({ type: 'SET_FROM_LANGUAGE', payload})
     const setToLanguage = (payload: Language) => dispatch({ type: 'SET_TO_LANGUAGE', payload})
